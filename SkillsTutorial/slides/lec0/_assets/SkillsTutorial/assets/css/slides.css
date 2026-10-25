@@ -1,63 +1,63 @@
 
 @font-face {
   font-family: "Ubuntu";
-  src: url("../../../../../../assets/fonts/Ubuntu-Regular.woff2") format("woff2");
+  src: url("../fonts/Ubuntu-Regular.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Ubuntu";
-  src: url("../../../../../../assets/fonts/Ubuntu-Bold.woff2") format("woff2");
+  src: url("../fonts/Ubuntu-Bold.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("../../../../../../assets/fonts/jetbrains-mono-latin-300-normal.woff2") format("woff2");
+  src: url("../fonts/jetbrains-mono-latin-300-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 300;
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("../../../../../../assets/fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
+  src: url("../fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("../../../../../../assets/fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2");
+  src: url("../fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("../../../../../../assets/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2");
+  src: url("../fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("../../../../../../assets/fonts/jetbrains-mono-latin-400-italic.woff2") format("woff2");
+  src: url("../fonts/jetbrains-mono-latin-400-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("../../../../../../assets/fonts/jetbrains-mono-latin-700-italic.woff2") format("woff2");
+  src: url("../fonts/jetbrains-mono-latin-700-italic.woff2") format("woff2");
   font-style: italic;
   font-weight: 700;
 }
 
 @font-face {
   font-family: "LXGW WenKai Screen";
-  src: url("../../../../../../assets/fonts/LXGWWenKaiScreen-lec0.woff2") format("woff2");
+  src: url("../fonts/LXGWWenKaiScreen-lec0.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
 }

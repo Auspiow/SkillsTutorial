@@ -36,11 +36,16 @@
    npm install
    ```
 
-3. 实时预览：
+3. 使用 Makefile：
 
    ```bash
-   npx reveal-md SkillsTutorial/slides-src/lec0.md -w
+   make watch lec0            # 实时预览 lec0
+   make print                 # 导出全部课程的 PDF
+   make static                # 导出全部课程的静态网站
+   make all                   # 同时导出全部课程的 PDF 和静态网站
    ```
+
+   print 和 static 也可以只处理某一门课程
 
 ## 阅读
 
