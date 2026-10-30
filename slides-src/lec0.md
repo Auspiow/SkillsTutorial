@@ -121,9 +121,9 @@ revealOptions:
 
 ## 课程资源
 
-课程主页：https://learn.auspiow.top/SkillsTutorial/
+课程主页：https://slides.auspiow.top/SkillsTutorial/
 
-课程仓库：https://github.com/Auspiow/learn/tree/main/SkillsTutorial
+课程仓库：https://github.com/Auspiow/SkillsTutorial
 
 课程回放：钉钉群有直播回放，同时我也会上传至B站[@Auspiow](https://space.bilibili.com/3546703439333795)
 
