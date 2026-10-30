@@ -1,0 +1,92 @@
+
+name: Deploy SkillsTutorial
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: skillstutorial-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build website
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p dist/slides
+
+          # Course homepage
+          cp index.html dist/
+          cp favicon.ico dist/
+          cp -a assets dist/
+          cp -a pdf dist/
+
+          # Generate static slides
+          for file in slides-src/*.md; do
+            [ -f "$file" ] || continue
+
+            name="$(basename "$file" .md)"
+
+            npx --no-install reveal-md \
+              "$file" \
+              --static "dist/slides/$name"
+
+            # Copy fonts needed by exported CSS
+            mkdir -p \
+              "dist/slides/$name/_assets/assets"
+
+            cp -a assets/fonts \
+              "dist/slides/$name/_assets/assets/"
+          done
+
+          # Verify expected output
+          test -f dist/index.html
+          test -f dist/slides/lec0/index.html
+          test -f dist/slides/lec0/_assets/assets/css/slides.css
+
+      - name: Configure SSH
+        shell: bash
+        env:
+          DEPLOY_KEY: ${{ secrets.ECS_DEPLOY_KEY }}
+          KNOWN_HOSTS: ${{ secrets.ECS_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy to ECS
+        shell: bash
+        run: |
+          rsync -avz --delete \
+            -e "ssh -i $HOME/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o BatchMode=yes" \
+            dist/ \
+            deploy@47.111.38.134:/var/www/site/SkillsTutorial/
