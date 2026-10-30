@@ -65,6 +65,8 @@ jobs:
           test -f dist/index.html
           test -f dist/slides/lec0/index.html
           test -f dist/slides/lec0/_assets/assets/css/slides.css
+          test -f dist/slides/lec0/_assets/assets/fonts/lxgw-wenkai-screen/font.css
+          test -f dist/slides/lec0/_assets/assets/fonts/lxgw-wenkai-screen/screen-000.woff2
 
       - name: Configure SSH
         shell: bash

@@ -21,6 +21,8 @@ print:
 
 static:
 	@for %%f in ($(FILES)) do @$(REVEAL) "$(SRC)/%%~nxf" --static "$(STATIC)/%%~nf"
+	@for %%f in ($(FILES)) do @if not exist "$(STATIC)/%%~nf/_assets/assets/fonts" mkdir "$(STATIC)/%%~nf/_assets/assets/fonts"
+	@for %%f in ($(FILES)) do @xcopy "assets\fonts" "$(STATIC)\%%~nf\_assets\assets\fonts\" /E /I /Y >nul
 
 help:
 	@echo "make              Export all PDF and HTML"
