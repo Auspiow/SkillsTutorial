@@ -1,7 +1,7 @@
 REVEAL := npx reveal-md
-SRC := SkillsTutorial/slides-src
-PDF := SkillsTutorial/pdf
-STATIC := SkillsTutorial/slides
+SRC := slides-src
+PDF := pdf
+STATIC := slides
 
 COURSE := $(word 2,$(MAKECMDGOALS))
 FILES := $(if $(COURSE),$(SRC)/$(COURSE).md,$(SRC)/*.md)
