@@ -119,16 +119,25 @@
   font-size: inherit;
 }
 
+/* 单独展示的图片水平居中 */
+.reveal section > img,
+.reveal p > img:only-child {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .reveal ul {
-  margin: 0 0 0 3em;
+  margin: 0 0 28px 3em;
 }
 
 .reveal ol {
-  margin: 0 0 0 2em;
+  display: block;
+  margin: 0 0 28px 2em;
 }
 
 .reveal li {
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .reveal li > p {
@@ -137,7 +146,17 @@
 }
 
 .reveal li + li {
-  margin-top: 10px;
+  margin-top: 18px;
+}
+
+.reveal ul > li + li {
+  margin-top: 12px;
+}
+
+.reveal li > ul,
+.reveal li > ol {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .reveal ul {

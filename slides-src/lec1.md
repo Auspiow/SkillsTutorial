@@ -161,6 +161,79 @@ feat: add search functionality	MINOR ➡ 1.3.3
 feat!: redesign public API	MAJOR ➡ 2.0.0
 ```
 
+<!--v-->
+
+## Branch
+
+* 创建分支
+  ```
+  git branch <BRANCH> [<COMMIT>]
+  ```
+* 查看分支
+  ```
+  git branch
+  ```
+* 切换分支（检出）
+  ```
+  git checkout [-b] <BRANCH>
+  ```
+* 删除分支
+  ```
+  git branch -d <BRANCH>
+  ```
+
+<!--v-->
+
+## Merge
+```
+git merge <BRANCH1> [<BRANCH2> ...] -m "<MESSAGE>"
+```
+
+* 如果都有新的提交，Git 会尝试自动合并，如果有冲突（Merge Conflict），需要手动解决（解决冲突后需要再次 add + commit）。
+
+<img src="./images/git_merge.png" alt="git_chain" style="zoom:30%;" />
+
+图源：[2023 秋冬实用技能拾遗 - TonyCrane](https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec2/#/)
+
+<!--v-->
+
+## 回溯？！
+
+Git 的历史一般情况下是**不可篡改**的，但实际上还是有一些方法可以对历史进行修改：
+
+git commit --amend：修改最新的提交 message。
+
+git reset <COMMIT>：回退到某个快照。（你可能更应该使用更加温和的 git revert）
+
+git rebase -i <COMMIT>：交互式 Rebase，功能非常强大，不到万不得已不要使用！
+
+<!--v-->
+
+## .gitignore
+
+~~这页slides被git忽略💀~~
+
+让git忽略掉某些文件
+```
+__pycache__
+node_modules
+.DS_Store
+```
+
+* `#` 开头的行是注释。
+* `*` 代表通配符，匹配多个字符。例如 *.c 匹配所有 .c 结尾的文件。
+* `**` 通配多个目录。例如 a/**/b 匹配 a/b、a/x/b、a/x/y/b 等。
+* / 开头只匹配根目录，否则匹配任意目录。
+* ! 开头是取消忽略。
+
+<!--v-->
+
+## 在vscode中使用git
+
+[Visual Studio Code](https://code.visualstudio.com/?_exp_home=e855cfac50) 中有 Git GUI
+
+* 小白也可以方便地使用 Git
+
 <!--s-->
 
 <div class="middle center">
@@ -173,6 +246,7 @@ feat!: redesign public API	MAJOR ➡ 2.0.0
 ## 远程版本库
 
 ![git_model_github](./images/git_model_github.png)
+
 图源：[2023 秋冬实用技能拾遗 - TonyCrane](https://slides.tonycrane.cc/PracticalSkillsTutorial/2023-fall-ckc/lec2/#/1/3)
 
 <!--v-->
@@ -192,6 +266,7 @@ GitHub / ZJU Git 最主要的功能是远程版本库
 * 社交功能：Follow, Trend, Star... 可以逛，可以刷
 * GitHub 目前需要魔法上网
 
+~~世界最大的同性交友网站~~
 <!--v-->
 
 ## Github 基础使用
@@ -201,6 +276,10 @@ Settings > Access > Emails 设置为 git 配置的邮箱
 * GitHub 参照版本库中提交者的邮箱将提交者关联至其 GitHub 账号
 * 建议配置 GPG 密钥对 commit 进行签名
   * [delete linux because it sucks](https://github.com/torvalds/linux/tree/8bcab0346d4fcf21b97046eb44db8cf37ddd6da0)
+
+数字签名（Digital Signature）
+- 非对称加密：发送者使用接收者的公钥加密，接收者使用自己的私钥解密，保证机密性。
+- 数字签名：发送者使用自己的私钥签名，验证者使用发送者的公钥验证，保证消息完整性，并认证签名密钥持有者
 
 <!--v-->
 
@@ -241,25 +320,36 @@ GitHub 提供的静态网页托管
 提供免费的 username.github.io 域名
 ![blog](./images/blog.png)
 
-<!--s-->
+<!--v-->
 
-<div class="middle center">
-<div style="width: 100%">
+## GitHub Actions
 
-# Part.3 在开始之前
+GitHub 提供的 CI/CD 服务
+
+* CI（Continuous Integration，持续集成）
+* CD（Continuous Delivery，持续交付）
+
+即配置一些自动化任务，在特定事件发生时自动执行
+
+* 例如每次 push 后自动测试，release 时自动构建部署
+
+*本课程网站的构建也使用了 github 的 CI/CD 服务*
+
+配置文件：.github/workflows/workflow_name.yml
+
+[Github Action 入门文档](https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 
 <!--v-->
 
+## 实践
 
-<!--v-->
+1. 为仓库 [Auspiow/SkillsTutorial](https://github.com/Auspiow/SkillsTutorial) 点一个 Star 😋
 
+2. 尝试在课程 Project 中使用 Git 与远程版本库进行协作
+  * 不要再压缩包传来传去了 😭
 
-<!--v-->
-
-
-<!--v-->
-
-<!--v-->
+3. 尝试使用 GitHub Pages 构建自己的个人主页
+  * 如果使用 Hexo 等框架，还可使用 GitHub Actions 进行自动化部署
 
 
 <!--s-->
