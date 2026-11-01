@@ -47,10 +47,6 @@
 
    print 和 static 也可以只处理某一门课程
 
-中文正文使用本地霞鹜文楷屏幕阅读版，完整字库按 Unicode 范围拆分为 WOFF2，
-浏览器按需下载。新增课件文字无需重新裁剪字体。
-字体来源、许可证和重新生成方法见 [字体说明](assets/fonts/lxgw-wenkai-screen/README.md)。
-
 ## 阅读
 
 幻灯片使用 [reveal.js](https://revealjs.com/) 展示。
