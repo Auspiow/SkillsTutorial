@@ -1,5 +1,5 @@
 ---
-title: 技能拾遗 · Lec 0
+title: 技能拾遗 · Lec 1
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple

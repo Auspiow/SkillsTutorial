@@ -61,7 +61,7 @@
   --r-main-font: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
   --r-heading-font: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
   --r-code-font: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
-  --r-main-font-size: 26px;
+  --r-main-font-size: 20px;
 }
 
 .reveal .slide-number {
@@ -84,7 +84,7 @@
 .reveal p,
 .reveal li,
 .reveal center {
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .reveal h1,
@@ -264,7 +264,7 @@ section .center {
 /* 表格基础样式 */
 
 .reveal table {
-  font-size: 26px;
+  font-size: 24px;
   margin-top: 15px;
   margin-bottom: 15px;
   border-collapse: collapse;
@@ -440,7 +440,11 @@ html.print-pdf .reveal pre code {
   transform: none !important;
 }
 
-/* 首页和结束页整体下移 */
 .reveal .middle.cover {
   transform: translateY(80px);
+}
+
+.reveal blockquote {
+  width: 85%;
+  margin: var(--r-block-margin) auto;
 }
